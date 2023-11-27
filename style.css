@@ -6,10 +6,17 @@ body {
     background-color: aliceblue;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
+    align-content: space-between;
     align-items: center;
+    height: 100vh;
+    width: 100vw;
 }
 
 .card {
     background-color: cornflowerblue;
+    margin: 1vw;
+    
+    aspect-ratio: 1/1;
+
 }
