@@ -1,0 +1,15 @@
+body {
+    background-color: aquamarine;
+}
+
+.gridContainer {
+    background-color: aliceblue;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background-color: cornflowerblue;
+}
