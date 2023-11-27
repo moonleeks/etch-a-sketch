@@ -1,5 +1,5 @@
 const gridContainer = document.querySelector(".gridContainer");
-generateGrid(20);
+generateGrid(5);
 
 const body = document.querySelector('body');
 body.addEventListener('mouseover', function (e) {
@@ -15,9 +15,14 @@ body.addEventListener('mouseout', function (e) {
 
 const genButton = document.querySelector('button');
 genButton.addEventListener('click', () => {
-    squaresPerSide = parseInt(prompt("Please enter number of squares per side"));
+    let squaresPerSide = parseInt(prompt(
+        "Please enter number of squares per side"));
+    if (squaresPerSide <= 100) {
+        generateGrid(squaresPerSide);
+    } else {
+        generateGrid(100);
+    }
     
-    //regenerate
 })
 
 function generateGrid(squaresPerSide) {
@@ -26,7 +31,7 @@ function generateGrid(squaresPerSide) {
     cards.forEach(e => e.remove());
 
     let totalSquares = squaresPerSide ** 2;
-    let cardHeigth = ((90 / squaresPerSide) -3) + "vh";
+    let cardHeigth = ((90 / squaresPerSide) -0.1) + "vh";
 
     // one node can only be added to the DOM once, therefore the nodes have to be
     // created inside the for loop
