@@ -1,5 +1,9 @@
 body {
     background-color: aquamarine;
+    
+}
+
+.outerContainer {
     display: flex;
     justify-content: center;
 }
