@@ -3,16 +3,21 @@ generateGrid(5);
 
 const body = document.querySelector('body');
 body.addEventListener('mouseover', function (e) {
-    if(e.target.classList.contains('card')) {
+    if (e.target.classList.contains('card')) {
         //e.target.style.backgroundColor = 'red';
-        e.target.style.backgroundColor = getRandomColor();
+        //e.target.style.backgroundColor = getRandomColor();
+        //console.log(e.target.style.backgroundColor);
+        //console.log("asd");
+        //e.target.style.backgroundColor = getDarkerColor(e.target.style.backgroundColor);
+        //e.target.style.backgroundColor = "red";
+        e.target.style.backgroundColor = getDarkerColor(e.target.style.backgroundColor);
     }
 });
-body.addEventListener('mouseout', function (e) {
+/* body.addEventListener('mouseout', function (e) {
     if(e.target.classList.contains('card')) {
         e.target.style.backgroundColor = 'cornflowerblue';
     }
-});
+}); */
 
 const genButton = document.querySelector('button');
 genButton.addEventListener('click', () => {
@@ -51,8 +56,30 @@ function getRandomColor() {
     const green = Math.floor(Math.random() * 255);
     const blue = Math.floor(Math.random() * 255);
     return "rgb("+red+","+green+","+blue+")";
-    
+}
 
-    
+function getDarkerColor(currentColor) {
+    if (!currentColor) {
+        console.log("undef");
+        return getRandomColor();
+    } else {
+        let values = [0,0,0];
+        let colors = currentColor.split(',');
+        values[0] = colors[0].split('(')[1];
+        values[1] = colors[1].split(' ')[1];
+        values[2] = colors[2].slice(1, -1);
 
+        const darkened = values.map(darkenColor);
+
+        return "rgb("+darkened[0]+","+darkened[1]+","+darkened[2]+")";
+    }    
+}
+
+function darkenColor(color) {
+    let colorInt = parseInt(color) - 26;
+    if (colorInt <= 0) {
+        return 0;
+    } else {
+        return colorInt;
+    }
 }
