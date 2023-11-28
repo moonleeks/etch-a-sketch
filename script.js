@@ -6,10 +6,6 @@ body.addEventListener('mouseover', function (e) {
     if (e.target.classList.contains('card')) {
         //e.target.style.backgroundColor = 'red';
         //e.target.style.backgroundColor = getRandomColor();
-        //console.log(e.target.style.backgroundColor);
-        //console.log("asd");
-        //e.target.style.backgroundColor = getDarkerColor(e.target.style.backgroundColor);
-        //e.target.style.backgroundColor = "red";
         e.target.style.backgroundColor = getDarkerColor(e.target.style.backgroundColor);
     }
 });
@@ -70,7 +66,6 @@ function getDarkerColor(currentColor) {
         values[2] = colors[2].slice(1, -1);
 
         const darkened = values.map(darkenColor);
-
         return "rgb("+darkened[0]+","+darkened[1]+","+darkened[2]+")";
     }    
 }
