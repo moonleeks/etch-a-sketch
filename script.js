@@ -4,7 +4,8 @@ generateGrid(5);
 const body = document.querySelector('body');
 body.addEventListener('mouseover', function (e) {
     if(e.target.classList.contains('card')) {
-        e.target.style.backgroundColor = 'red';
+        //e.target.style.backgroundColor = 'red';
+        e.target.style.backgroundColor = getRandomColor();
     }
 });
 body.addEventListener('mouseout', function (e) {
@@ -40,7 +41,18 @@ function generateGrid(squaresPerSide) {
         card.classList.add('card');
         card.style.height = cardHeigth;    
         gridContainer.appendChild(card);
-    }
+    }    
+}
+
+function getRandomColor() {
+    //rgb() is not a function in javascript but CSS, therefore we pass a String
+    // that looks like "rgb(1,2,3)"
+    const red = Math.floor(Math.random() * 255);
+    const green = Math.floor(Math.random() * 255);
+    const blue = Math.floor(Math.random() * 255);
+    return "rgb("+red+","+green+","+blue+")";
     
+
     
+
 }
