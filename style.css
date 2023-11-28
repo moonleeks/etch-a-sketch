@@ -14,18 +14,14 @@ body {
     background-color: aliceblue;
     display: flex;
     flex-wrap: wrap;
-/*     justify-content: space-between;
-    align-content: space-between;
-    align-items: center; */
-    height: 90vh;
+    justify-content: space-evenly;
+    height: 900px;
     aspect-ratio: 1/1;
+    gap: 1px;
 }
 
 .card {
     background-color: cornflowerblue;
-    border-style: solid;
-    border-width: 1px;
-    border-color: black;
     aspect-ratio: 1/1;
 }
 

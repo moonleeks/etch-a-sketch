@@ -31,7 +31,7 @@ function generateGrid(squaresPerSide) {
     cards.forEach(e => e.remove());
 
     let totalSquares = squaresPerSide ** 2;
-    let cardHeigth = ((90 / squaresPerSide) -0.1) + "vh";
+    let cardHeigth = ((900 / squaresPerSide) -1) + "px";
 
     // one node can only be added to the DOM once, therefore the nodes have to be
     // created inside the for loop
